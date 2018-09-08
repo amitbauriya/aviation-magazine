@@ -1,0 +1,805 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Achievements - Terna Aviation Magazine</title>
+    <meta name='robots' content='index,follow' />
+    <meta http-equiv="Cache-control" content="public">
+    <meta http-equiv="expires" content="Mon, 22 Aug 2018 11:12:01 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="theme-color" content="#00339a">
+	<link rel="icon" href="img/favicon.ico">
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+	<link rel='dns-prefetch' href='//s.w.org' />
+<link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='css/articles.css' type='text/css' media='all' />
+<link rel='stylesheet' href='css/social.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+	<script type='text/javascript' src='js/jquery/jquery.js'></script>
+	<script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
+	<link rel='https://api.w.org/' href='wp-json/' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+<style>
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Navigation
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+.btn, .button {
+    padding: 0 0;
+    min-width: 60px;
+	}
+nav {
+  margin-bottom: 30px;
+  text-align: center; }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+  nav li {
+    display: inline-block; }
+  nav a {
+    display: block;
+    padding: 17px 15px;
+    color: #b2cce1;
+    font-size: 18px;
+    margin-bottom: 3px; }
+    nav a:hover, nav a.active {
+      border: solid 2px #315a7d;
+      color: #315a7d; }
+
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Image Grid
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+.col {
+  float: left; }
+
+.col-row {
+  margin-bottom: 60px; }
+  .col-row:last-child {
+    margin-bottom: 0; }
+
+.two-col {
+  padding-left: 60px; }
+  .two-col .col {
+    width: 540px; }
+
+.col-1-2 {
+  margin-left: -60px;
+  margin-right: 60px; }
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* CSS Reset
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+body {
+  line-height: 1; }
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: normal; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+del {
+  text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a img {
+  border: none; }
+
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Globals
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  color: #505050;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.8; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-weight: 400; }
+
+a {
+  text-decoration: none;
+  color: steelblue; }
+
+a:hover {
+  color: #315a7d; }
+
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Template
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+nav {
+    margin-bottom: 0;
+}
+.page-title-section {
+    padding: 110px 0;
+}
+#wrapper {
+  width: 100%;
+  margin: 0 auto; }
+
+#main {
+  background-color: #fff;
+  padding: 30px 0; }
+
+.container {
+	    padding-right: 15px;
+	    padding-left: 15px;
+	    margin-right: auto;
+	    margin-left: auto;
+	    width: 1200px;
+  padding: 0 30px; }
+
+.menu > li {
+margin-right: 1px;}
+.dropdown:after {
+position: inherit;}
+.module {
+    padding: 0 0;}
+.nav-bar .module, .nav-bar .module-group {
+    height: 105px;
+}
+.footer .footer-credits {
+    text-align: left;
+}
+
+
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Info Bar
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+#info-bar {
+  background-color: #38678f; }
+
+#info-bar a {
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  padding: 10px; }
+
+#info-bar a:hover {
+  background-color: #315a7d; }
+
+span.all-tutorials,
+span.back-to-tutorial {
+  display: block;
+  width: 50%; }
+
+span.all-tutorials {
+  float: left;
+  text-align: left; }
+
+span.back-to-tutorial {
+  float: right;
+  text-align: right; }
+
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Header
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+
+#title {
+  text-align: center; }
+
+#title h1 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 10px; }
+
+#title h2 {
+  color: #8db3d3;
+  font-size: 20px; }
+
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Footer
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+footer {
+  padding: 30px 0;
+  text-align: center; }
+  footer span {
+    color: #fff; }
+    footer span a {
+      color: #8db3d3; }
+
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Extras
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0; }
+
+/* ============================================================
+  FUSION ADS
+============================================================ */
+#fusionads {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 12px;
+  line-height: 1.2;
+  -webkit-box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+#fusionads .fusion-wrap {
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 130px;
+}
+#fusionads a.fusion-text {
+  display: block;
+  color: #646464;
+}
+#fusionads a.fusion-img {
+  display: block;
+  margin-bottom: 10px;
+  width: 130px;
+  height: 100px;
+  background-color: #fff;
+}
+#fusionads a.fusion-img img {
+  display: block;
+  margin: 0 0 10px 0;
+}
+#fusionads a.fusion-poweredby {
+  color: #ff3c50;
+}
+
+#close-fusionad {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 30;
+  width: 20px;
+  height: 20px;
+  background-color: #505050;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Media Queries
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+@media all and (max-width: 600px) {
+  #info-bar a {
+    display: block; }
+
+  span.all-tutorials,
+  span.back-to-tutorial {
+    width: 100%; }
+
+  span.all-tutorials,
+  span.back-to-tutorial {
+    float: none;
+    text-align: center; }
+
+  span.all-tutorials {
+    border-bottom: solid 1px #315a7d; }
+
+  #title h1 {
+    font-size: 20px; }
+
+  #title h2 {
+    font-size: 16px; } }
+
+figure {
+    margin: 0;
+    position: relative;
+}
+figure img {
+    display: block;
+    position: relative;
+    z-index: 10;
+    max-width: 100%;
+    height: auto;
+}
+figure figcaption {
+    display: block;
+    position: absolute;
+    z-index: 5;
+}
+figure h3 {
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+figure span {
+    color: #b2cce1;
+    display: block;
+    line-height: 1.2;
+}
+figure a.close-caption {
+    display: block;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #315a7d;
+}
+figure a.close-caption.hidden {
+    display: none
+}
+/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Effect 4
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+#effect-4 figure {
+  overflow: hidden; }
+
+#effect-4 figure a.close-caption {
+  bottom: 10px;
+  left: 10px; }
+
+#effect-4 figure figcaption {
+  background-color: steelblue;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+
+#effect-4 figure img {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.no-touch #effect-4 figure:hover img,
+#effect-4 figure.hover img {
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+  transform: translateX(50%); }
+
+.no-touch #effect-4 figure:hover figcaption,
+#effect-4 figure.hover figcaption {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0); }
+	/* ------------------------------------------------------------ *\
+|* ------------------------------------------------------------ *|
+|* Media Queries
+|* ------------------------------------------------------------ *|
+\* ------------------------------------------------------------ */
+@media all and (max-width: 1200px) {
+  .col {
+    float: none; }
+
+  .two-col {
+    padding-left: 0; }
+    .two-col .col {
+      margin-bottom: 60px; }
+      .two-col .col:last-child {
+        margin-bottom: 0; }
+
+  .col-1-2 {
+    margin: 0 auto; }
+
+  .col-2-2 {
+    margin: 0 auto; } }
+@media all and (max-width: 660px) {
+  .col-row {
+    margin-bottom: 30px; }
+
+  .two-col .col {
+    max-width: 540px;
+    width: 100%;
+    margin-bottom: 30px; } }
+@media all and (max-width: 615px) {
+  figure h3 {
+    font-size: 18px; }
+  figure span {
+    font-size: 12px; } }
+@media all and (max-width: 480px) {
+  #effect-2 figure figcaption h3 {
+    margin-top: 100px; } }
+@media all and (max-width: 360px) {
+  #effect-2 figure figcaption h3 {
+    margin-top: 80px; } }
+
+</style>
+<!-- js -->
+<script src="js/modernizr.js"></script>
+<script type="text/javascript">
+(function(window){
+
+    // check for touch
+    if (Modernizr.touch) {
+
+        // run the forEach on each figure element
+        [].slice.call(document.querySelectorAll("figure")).forEach(function(el,i){
+
+            // get close-caption button in variable
+            var closeCaption = el.querySelector(".close-caption");
+
+            // show the close-caption button
+            classie.remove(closeCaption,"hidden");
+
+            // check if the user moves a finger
+            var fingerMove = false;
+            el.addEventListener("touchmove",function(e){
+                e.stopPropagation();
+                fingerMove = true;
+            });
+
+            // always reset fingerMove to false on touch start
+            el.addEventListener("touchstart",function(e){
+                e.stopPropagation();
+                fingerMove = false;
+            });
+
+            // add hover class if figure touchend and fingerMove is false
+            el.addEventListener("touchend",function(e){
+                e.stopPropagation();
+                if (fingerMove == false) {
+                    classie.add(el,"hover");
+                }
+            });
+
+            // if close-caption button clicked, remove hover class
+            closeCaption.addEventListener("touchend",function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                if (fingerMove == false) {
+                    if (classie.has(el,"hover")) {
+                        classie.remove(el,"hover");
+                    }
+                }
+            });
+
+        });
+
+    }
+
+})(window);
+</script>
+</head>
+<header id="masthead" class="site-header" role="banner">
+	<div class="nav-container">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<div class="container nav-bar">
+				<div class="row">
+					<div class="module left"><a href="http://www.terna.org/aviation2017/"><img src="img/terna-logo.png" style="margin-bottom:3px;" width="192" height="92" alt="Terna Engineering College Nerul"><img src="img/loavi.png" width="70px" height="70px" alt="Terna Aviation"></a>
+					</div>
+					<div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+						<i class="fa fa-bars"></i>
+					</div>
+					<div class="module-group right">
+						<div class="module left">
+							<div class="collapse navbar-collapse navbar-ex1-collapse"><ul id="menu" style="margin-top:25px;" class="menu"><li id="menu-item-1636" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1636 active"><a title="Home" href="http://www.terna.org/aviation2017/">Home</a></li>
+								<li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1637 dropdown"><a title="Gallery" href="gallery.html">Gallery</a>
+									<ul role="menu" class=" dropdown-menu">
+										<li id="menu-item-16991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16991"><a href="photography.html">Photography</a></li>
+										<li id="menu-item-16992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16992"><a href="sketches.html">Sketches</a></li>
+										<li id="menu-item-16993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16993"><a href="videos.html">Songs-Videos</a></li>
+										<li id="menu-item-16994" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16994 dropdown"><a href="#">Literature</a>
+											<ul role="menu" class=" dropdown-menu">
+												<li id="menu-item-1645" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1645"><a href="non_technical_articles.html">Non Technical</a></li>
+												<li id="menu-item-1699" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1699"><a href="technical_articles.html">Technical</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li id="menu-item-1633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1633 dropdown"><a title="Articles" href="#" data-toggle="dropdown" class="dropdown-toggle">Articles</a>
+									<ul role="menu" class=" dropdown-menu">
+										<li id="menu-item-16999" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16999"><a href="technical_articles.html">Technical Articles</a></li>
+										<li id="menu-item-16998" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16998"><a href="non_technical_articles.html">Non Technical Articles</a></li>
+									</ul>
+								</li>
+								<li id="menu-item-1639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1639 dropdown"><a title="Events and Achievements" href="#" data-toggle="dropdown" class="dropdown-toggle">Events and Achievements</a>
+									<ul role="menu" class=" dropdown-menu">
+										<li id="menu-item-1697" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1697"><a href="events.html">Events</a></li>
+										<li id="menu-item-1698" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1698"><a href="achievements.html">Achievements</a></li>
+									</ul>
+								</li>
+								<li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1637"><a title="About Us" href="about-us.html">ABOUT</a></li>
+							</div>
+							<!--end of module group-->
+						</div>
+					</div>
+		</nav><!-- #site-navigation -->
+	</div>
+</header><!-- #masthead -->
+		<style>
+		.bg-secondary {
+				background: transparent url(css/statics/achievements.jpg) no-repeat fixed center;
+		}
+		code1 {
+		  font-size: 45px;
+		  font-family: 'Monoton', cursive;
+		  text-align: center;
+		  text-transform: uppercase;
+		  text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+		  color: red;
+		}
+		code1 p { margin:0; }
+		#error:hover { text-shadow: 0 0 200px #ffffff,0 0 80px #008000,0 0 6px #0000ff; }
+		#code:hover { text-shadow: 0 0 100px red,0 0 40px FireBrick,0 0 8px DarkRed; }
+		#error {
+			line-height: 1.6;
+		  color: #fff;
+		  text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff;
+		}
+		#error span {
+		  animation: upper 11s linear infinite;
+		}
+		#code{
+		font-size:25px;;
+		}
+		#code span:nth-of-type(2) {
+		  animation: lower 10s linear infinite;
+		}
+		#code span:nth-of-type(1) {
+		  text-shadow: none;
+		  opacity:.4;
+		}
+		@keyframes upper {
+		  0%,19.999%,22%,62.999%,64%, 64.999%,70%,100% {
+		    opacity:.99; text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff;
+		  }
+		  20%,21.999%,63%,63.999%,65%,69.999% {
+		    opacity:0.4; text-shadow: none;
+		  }
+		}
+		@keyframes lower {
+		  0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
+		    opacity:0.99; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+		  }
+		  19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% {
+		    opacity:0.4; text-shadow: none;
+		  }
+		}
+		</style>
+		<div class="header-callout">
+		<section class="page-title-section bg-secondary " >
+<div class="container">
+<div class="row"><div class="col-xs-12">
+	<code1>
+			<p id="error">Achiev<span>e</span>ments</p>
+		</code1>
+		</div>
+
+</div>
+<!--end of row-->
+</div>
+<!--end of container-->
+</section>
+<aside id="sticky-social">
+		<ul>
+				<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.terna.org%2Faviation2017%2Fachievements.html" class="entypo-facebook" target="_blank"><span>Facebook</span></a></li>
+				<li><a href="https://twitter.com/intent/tweet/?text=Check%20out%20this%20website!&url=http%3A%2F%2Fterna.org%2Faviation2017%2Fachievements.html&via=jonsuh" class="entypo-twitter" target="_blank"><span>Twitter</span></a></li>
+				<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fterna.org%2Faviation2017%2Fachievements.html" class="entypo-gplus" target="_blank"><span>Google+</span></a></li>
+				<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fterna.org%2Faviation2017%2Fachievements.html&title=Aviation%20Terna%20Engg%20College&source=http%3A%2F%2Fterna.org%2Faviation2017%2Fachievements.html&summary=Short%20summary" class="entypo-linkedin" target="_blank"><span>LinkedIn</span></a></li>
+				<li><a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fterna.org%2Faviation2017%2Fachievements.html&title=Aviation%20Terna%20Engg%20College" class="entypo-stumbleupon" target="_blank"><span>StumbleUpon</span></a></li>
+				<li><a href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fterna.org%2Faviation2017%2Fachievements.html&media=http%3A%2F%2Fterna.org%2FAviation%2Fimg%2Ffavicon.ico&description=Short%20description&hashtags=Terna,College" class="entypo-pinterest" target="_blank"><span>Pinterest</span></a></li>
+				<li><a href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fterna.org%2Faviation2017%2Fachievements.html&t=Aviation%20Terna%20Engg%20College" class="entypo-tumblr" target="_blank"><span>Tumblr</span></a></li>
+		</ul>
+</aside>
+</div>
+
+<div id="main">
+    <div class="container">
+
+        <div id="effect-4">
+            <div class="two-col col-row clearfix">
+                <div class="col col-1-2">
+                    <figure>
+                        <img src="img/achievements/samarth_joshi_technohunt.jpg" alt="Technohunt Winner-1">
+                        <figcaption>
+                            <h3><div style="text-align:center;">SAMARTH JOSHI</div></h3>
+                            <span><div style="color:orange;"><b>TechnoHunt 1<sup>st</sup> Prize Winner</b></span><br><br>
+														<span>Samarth has won 1st Prize in TechnoHunt and have completed all the levels and emerged as a winner. He has received Rs. 3000 as prize money.</span>
+                            <a href="#" class="close-caption hidden">x</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col col-2-2">
+									<figure>
+											<img src="img/achievements/samarth_joshi_technohunt.jpg" alt="Technohunt Winner-2">
+											<figcaption>
+													<h3><div style="text-align:center;">TANUJA MOTE</div></h3>
+													<span><div style="color:orange;"><b>TechnoHunt 2<sup>nd</sup> Prize Winner</b></span><br><br>
+													<span>Tanuja has won 2nd Prize in TechnoHunt and have completed all the levels and emerged as a winner. He has received Rs. 3000 as prize money.</span>
+													<a href="#" class="close-caption hidden">x</a>
+											</figcaption>
+									</figure>
+                </div>
+            </div>
+            <div class="two-col col-row clearfix">
+                <div class="col col-1-2">
+                    <figure>
+                        <img src="img/achievements/jaythakker_thin_client_pj.jpg" alt="Thin Client Project">
+												<figcaption>
+														<h3><div style="text-align:center;">AKASH, ALOK & JAY</div></h3>
+														<span><div style="color:orange;"><b>Successfully Configured Thin Client Project</b></span><br><br>
+														<span>Jay Thakker, student of BE – Computer Branch successfully configured and implemented a Thin Client Project assigned to him under the guidance of Prof. V. B. GAIKWAD.</span>
+														<a href="#" class="close-caption hidden">x</a>
+												</figcaption>
+                    </figure>
+                </div>
+                <div class="col col-2-2">
+									<figure>
+											<img src="img/achievements/sairaj_chittal_chess.jpg" alt="Sairaj Chittal">
+											<figcaption>
+													<h3><div style="text-align:center;">SAIRAJ CHITTAL</div></h3>
+													<span><div style="color:orange;"><b>International Chess Player</b></span><br><br>
+													<span>Sairaj is an International and National level CHESS player and secured 26<sup>th</sup> Rank in the meirt list.</span>
+													<a href="#" class="close-caption hidden">x</a>
+											</figcaption>
+									</figure>
+                </div>
+            </div>
+						<div class="two-col col-row clearfix">
+						                <div class="col col-1-2">
+						                    <figure>
+						                        <img src="img/achievements/gaurav_hijare.jpg" alt="Best Acting Debut Winner">
+																		<figcaption>
+																				<h3><div style="text-align:center;">GAURAV HAJARE</div></h3>
+																				<span><div style="color:orange;"><b>Best Acting Debut</b><br><br>
+																				<span>Gaurav Hajare has received Guruvarya Late Shri Keshavrao More Smriti Puraskar for best acting debut in Zapurza 2015</span>
+																				<a href="#" class="close-caption hidden">x</a>
+																		</div></span></figcaption>
+						                    </figure>
+						                </div>
+						                <div class="col col-2-2">
+															<figure>
+																	<img src="img/achievements/manish_lokhande.jpg" alt="MANISH LOKHANDE">
+																	<figcaption>
+																			<h3><div style="text-align:center;">MANISH LOKHANDE</div></h3>
+																			<span><div style="color:orange;"><b>Secured 2<sup>nd</sup> Rank in SRE Competition</b><br><br>
+																			<span>Manish Lokhande has secured second price in "Software Reverse Engineering" competition conducted as a Pre- Event of Tech Next 2015, held at Terna Engineering College.</span>
+																			<a href="#" class="close-caption hidden">x</a>
+																	</div></span></figcaption>
+															</figure>
+						                </div>
+						            </div>
+												<div class="two-col col-row clearfix">
+												                <div class="col col-1-2">
+												                    <figure>
+												                        <img src="img/achievements/jayant_singh.jpg" alt="JAYANT SINGH">
+																								<figcaption>
+																										<h3><div style="text-align:center;">JAYANT SINGH</div></h3>
+																										<span><div style="color:orange;"><b>Secured 5<sup>th</sup> Rank in Chess held at K.V.S College</b><br><br>
+																										<span>Jayant has secured 5<sup>th</sup> position in chess(U-19) event of kendriya Vidyalaya Regional Sports meet organized by K.V.S., Mumbai region also he has participated in chess(U-19) event of the 42nd Kendriya Vidyalaya Sangathan National Sports Meet 2011 organised by KVS Bhopal Region.</span>
+																										<a href="#" class="close-caption hidden">x</a>
+																								</div></span></figcaption>
+												                    </figure>
+												                </div>
+												            </div>
+        </div>
+    </div>
+
+</div><!-- #main -->
+
+
+<footer id="colophon" class="site-footer footer bg-dark" role="contentinfo">
+	<div class="container footer-inner">
+		<div class="row">
+
+		</div>
+
+		<div class="row">
+			<div class="site-info col-sm-6">
+				<div class="copyright-text">
+									</div>
+				<div class="footer-credits">
+					Theme Designed by Computer Department Students
+						</div>
+					</div><!-- .site-info -->
+			<div class="col-sm-6 text-right">
+							</div>
+		</div>
+	</div>
+	<a class="btn btn-sm fade-half back-to-top inner-link" href="#top"><i class="fa fa-angle-up"></i></a>
+</footer>
+
+
+
+</div><!-- /#wrapper -->
+<script type='text/javascript' src='js/navigation.js'></script>
+<script type='text/javascript' src='js/imagesloaded.min.js'></script>
+<script type='text/javascript' src='js/masonry.min.js'></script>
+<script type='text/javascript' src='js/jquery/jquery.masonry.min.js'></script>
+<script type='text/javascript' src='js/flexslider.js'></script>
+<script type='text/javascript' src='js/smooth-scroll.min.js'></script>
+<script type='text/javascript' src='js/parallax.min.js'></script>
+<script type='text/javascript' src='js/flexible-scripts.js'></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function ($) {
+				if ( $(window).width() >= 767 ) {
+					$('.navbar-nav > li.menu-item > a').click(function () {
+						window.location = $(this).attr('href');
+					});
+				}
+			});
+		</script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">window.NREUM || (NREUM = {}), __nr_require = function (e, t, n) { function r(n) { if (!t[n]) { var o = t[n] = { exports: {} }; e[n][0].call(o.exports, function (t) { var o = e[n][1][t]; return r(o || t) }, o, o.exports) } return t[n].exports } if ("function" == typeof __nr_require) return __nr_require; for (var o = 0; o < n.length; o++)r(n[o]); return r }({ 1: [function (e, t, n) { function r() { } function o(e, t, n) { return function () { return i(e, [(new Date).getTime()].concat(u(arguments)), t ? null : this, n), t ? void 0 : this } } var i = e("handle"), a = e(2), u = e(3), c = e("ee").get("tracer"), f = NREUM; "undefined" == typeof window.newrelic && (newrelic = f); var s = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"], l = "api-", p = l + "ixn-"; a(s, function (e, t) { f[t] = o(l + t, !0, "api") }), f.addPageAction = o(l + "addPageAction", !0), f.setCurrentRouteName = o(l + "routeName", !0), t.exports = newrelic, f.interaction = function () { return (new r).get() }; var d = r.prototype = { createTracer: function (e, t) { var n = {}, r = this, o = "function" == typeof t; return i(p + "tracer", [Date.now(), e, n], r), function () { if (c.emit((o ? "" : "no-") + "fn-start", [Date.now(), r, o], n), o) try { return t.apply(this, arguments) } finally { c.emit("fn-end", [Date.now()], n) } } } }; a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (e, t) { d[t] = o(p + t) }), newrelic.noticeError = function (e) { "string" == typeof e && (e = new Error(e)), i("err", [e, (new Date).getTime()]) } }, {}], 2: [function (e, t, n) { function r(e, t) { var n = [], r = "", i = 0; for (r in e) o.call(e, r) && (n[i] = t(r, e[r]), i += 1); return n } var o = Object.prototype.hasOwnProperty; t.exports = r }, {}], 3: [function (e, t, n) { function r(e, t, n) { t || (t = 0), "undefined" == typeof n && (n = e ? e.length : 0); for (var r = -1, o = n - t || 0, i = Array(o < 0 ? 0 : o); ++r < o;)i[r] = e[t + r]; return i } t.exports = r }, {}], ee: [function (e, t, n) { function r() { } function o(e) { function t(e) { return e && e instanceof r ? e : e ? c(e, u, i) : i() } function n(n, r, o) { if (!p.aborted) { e && e(n, r, o); for (var i = t(o), a = v(n), u = a.length, c = 0; c < u; c++)a[c].apply(i, r); var f = s[w[n]]; return f && f.push([y, n, r, i]), i } } function d(e, t) { b[e] = v(e).concat(t) } function v(e) { return b[e] || [] } function g(e) { return l[e] = l[e] || o(n) } function m(e, t) { f(e, function (e, n) { t = t || "feature", w[n] = t, t in s || (s[t] = []) }) } var b = {}, w = {}, y = { on: d, emit: n, get: g, listeners: v, context: t, buffer: m, abort: a, aborted: !1 }; return y } function i() { return new r } function a() { (s.api || s.feature) && (p.aborted = !0, s = p.backlog = {}) } var u = "nr@context", c = e("gos"), f = e(2), s = {}, l = {}, p = t.exports = o(); p.backlog = s }, {}], gos: [function (e, t, n) { function r(e, t, n) { if (o.call(e, t)) return e[t]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(e, t, { value: r, writable: !0, enumerable: !1 }), r } catch (i) { } return e[t] = r, r } var o = Object.prototype.hasOwnProperty; t.exports = r }, {}], handle: [function (e, t, n) { function r(e, t, n, r) { o.buffer([e], r), o.emit(e, t, n) } var o = e("ee").get("handle"); t.exports = r, r.ee = o }, {}], id: [function (e, t, n) { function r(e) { var t = typeof e; return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : a(e, i, function () { return o++ }) } var o = 1, i = "nr@id", a = e("gos"); t.exports = r }, {}], loader: [function (e, t, n) { function r() { if (!h++) { var e = y.info = NREUM.info, t = l.getElementsByTagName("script")[0]; if (setTimeout(f.abort, 3e4), !(e && e.licenseKey && e.applicationID && t)) return f.abort(); c(b, function (t, n) { e[t] || (e[t] = n) }), u("mark", ["onload", a()], null, "api"); var n = l.createElement("script"); n.src = "https://" + e.agent, t.parentNode.insertBefore(n, t) } } function o() { "complete" === l.readyState && i() } function i() { u("mark", ["domContent", a()], null, "api") } function a() { return (new Date).getTime() } var u = e("handle"), c = e(2), f = e("ee"), s = window, l = s.document, p = "addEventListener", d = "attachEvent", v = s.XMLHttpRequest, g = v && v.prototype; NREUM.o = { ST: setTimeout, CT: clearTimeout, XHR: v, REQ: s.Request, EV: s.Event, PR: s.Promise, MO: s.MutationObserver }, e(1); var m = "" + location, b = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1016.min.js" }, w = v && g && g[p] && !/CriOS/.test(navigator.userAgent), y = t.exports = { offset: a(), origin: m, features: {}, xhrWrappable: w }; l[p] ? (l[p]("DOMContentLoaded", i, !1), s[p]("load", r, !1)) : (l[d]("onreadystatechange", o), s[d]("onload", r)), u("mark", ["firstbyte", a()], null, "api"); var h = 0 }, {}] }, {}, ["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aviation - Terna Engineering College</title>
+    <meta name='robots' content='index,follow' />
+    <meta name="description" content="AVIATION is the online magazine of computer department of Terna Engineering college. Aviation is a platform which lets the student show their talents. Be it articles, achievements, sketches or even photography. Aviation will also let you know the upcoming events which will be held in the computer department." />
+    <meta name="keywords" content="terna magazine, terna comps magazine, terna aviation magazine, terna computer aviation magazine, terna photography, terna articles" />
+    <meta http-equiv="Cache-control" content="public">
+    <meta http-equiv="expires" content="Mon, 22 Aug 2018 11:12:01 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta property="og:locale" content="en_US" />
+    <link rel="icon" href="img/favicon.ico">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aviation - Terna Engineering College" />
+    <meta property="og:description" content="AVIATION is the online magazine of computer department of Terna Engineering college. Aviation is a platform which lets the student show their talents. Be it articles, achievements, sketches or even photography. Aviation will also let you know the upcoming events which will be held in the computer department." />
+    <meta property="og:url" content="http://terna.org/aviation2017/" />
+    <meta property="og:image" content="https://lh3.googleusercontent.com/CepfdQ73iW8-6G_KsAeCytRbiBJZQgWXl1zzARBfBISQARcHKypNVfYLdS97ZXnr4LZzHEBqp_k3dUzt8n7m=w1366-h675" />
+    <meta property="og:site_name" content="Terna Engineering College" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' id='contact-form-7-css' href='css/styles.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='flexible-bootstrap-css' href='css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='flexible-fonts-css' href='//fonts.googleapis.com/css?family=Raleway%3A100%2C300%2C400%2C500%2C600%2C700%7COpen+Sans%3A400%2C500%2C600&#038;ver=4.7.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='flexslider-css-css' href='css/flexslider.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='flexible-style-css' href='css/style_1.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/twinkling_stars.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='jetpack_css-css' href='css/jetpack.css' type='text/css' media='all' />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type='text/javascript' src='js/3.js'></script>
+    <script type='text/javascript' src="js/5.js"></script>
+    <script type='text/javascript' src="js/index.js"></script>
+    <script type='text/javascript' src='js/jquery/jquery.js'></script>
+    <script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
+    <style type="text/css">.text--line{font-size:10.7em}.text--line2{font-size:7.7em}.text-copy{fill:#eee;stroke-dasharray:11% 12%;stroke-width:6px;-webkit-animation:stroke-offset 1s infinite linear;animation:stroke-offset 5s infinite linear}.text-copy:nth-child(1){stroke:#360745;stroke-dashoffset:7%}.text-copy:nth-child(2){stroke:#e41358;stroke-dashoffset:14%}.text-copy:nth-child(3){stroke:#e8d738;stroke-dashoffset:21%}.text-copy:nth-child(4){stroke:#471ada;stroke-dashoffset:28%}.text-copy:nth-child(5){stroke:#a94442;stroke-dashoffset:35%}@-webkit-keyframes stroke-offset{30%{stroke-dashoffset:25%;stroke-dasharray:0 65%}}@keyframes stroke-offset{70%{stroke-dashoffset:25%;stroke-dasharray:0 65%}}#social{background:0 0;float:right}#social li{display:inline-block}#social li,#social ul{border:0!important;list-style:none;padding-left:0;text-align:center}#social .social_icon span{display:none}#social li a[href*="twitter.com"] .fa:before,.fa-twitter:before{content:"\f099"}#social li a[href*="facebook.com"] .fa:before,.fa-facebook-f:before,.fa-facebook:before{content:"\f09a"}#social li a[href*="github.com"] .fa:before,.fa-github:before{content:"\f09b"}#social li a[href*="/feed"] .fa:before,.fa-rss:before{content:"\f09e"}#social li a[href*="pinterest.com"] .fa:before,.fa-pinterest:before{content:"\f0d2"}#social li a[href*="plus.google.com"] .fa:before,.fa-google-plus:before{content:"\f0d5"}#social li a[href*="linkedin.com"] .fa:before,.fa-linkedin:before{content:"\f0e1"}#social li a[href*="youtube.com"] .fa:before,.fa-youtube:before{content:"\f167"}#social li a[href*="instagram.com"] .fa:before,.fa-instagram:before{content:"\f16d"}#social li a[href*="flickr.com"] .fa:before,.fa-flickr:before{content:"\f16e"}#social li a[href*="tumblr.com"] .fa:before,.fa-tumblr:before{content:"\f173"}#social li a[href*="dribbble.com"] .fa:before,.fa-dribbble:before{content:"\f17d"}#social li a[href*="skype.com"] .fa:before,.fa-skype:before{content:"\f17e"}#social li a[href*="foursquare.com"] .fa:before,.fa-foursquare:before{content:"\f180"}#social li a[href*="vimeo.com"] .fa:before,.fa-vimeo-square:before{content:"\f194"}#social li a[href*="spotify.com"] .fa:before,.fa-spotify:before{content:"\f1bc"}#social li a[href*="soundcloud.com"] .fa:before,.fa-soundcloud:before{content:"\f1be"}.collapse.navbar-collapse.navbar-ex1-collapse{line-height:25px}img.cast-shadow{box-shadow:none;-webkit-box-shadow:none}</style>
+</head>
+<body class="home page-template page-template-template-home page-template-template-home-php page page-id-701 has-sidebar-right">
+    <div id="page" class="site">
+        <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+        <header id="masthead" class="site-header" role="banner">
+            <div class="nav-container">
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <div class="container nav-bar">
+                        <div class="row">
+                            <div class="module left">
+                                <a href="http://www.terna.org"><img src="img/terna-logo.png" style="margin-bottom:3px;" width="192" height="92" alt="Terna Engineering College Nerul"><img src="img/loavi.png" width="70px" height="70px" alt="Terna Aviation"></a></a></a>
+                            </div>
+                            <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+                                <i class="fa fa-bars"></i>
+                            </div>
+                            <div class="module-group right">
+                                <div class="module left">
+                                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                                        <ul id="menu" style="margin-top:25px;" class="menu">
+                                            <li id="menu-item-1636" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1636 active"><a title="Home" href="http://www.terna.org/aviation2017/">Home</a></li>
+                                            <li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1637 dropdown">
+                                                <a title="Gallery" href="gallery.html">Gallery</a>
+                                                <ul role="menu" class=" dropdown-menu">
+                                                    <li id="menu-item-16991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16991"><a href="photography.html">Photography</a></li>
+                                                    <li id="menu-item-16992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16992"><a href="sketches.html">Sketches</a></li>
+                                                    <li id="menu-item-16993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16993"><a href="videos.html">Songs-Videos</a></li>
+                                                    <li id="menu-item-16994" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16994 dropdown">
+                                                        <a href="#">Literature</a>
+                                                        <ul role="menu" class=" dropdown-menu">
+                                                            <li id="menu-item-1645" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1645"><a href="non_technical_articles.html">Non Technical</a></li>
+                                                            <li id="menu-item-1699" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1699"><a href="technical_articles.html">Technical</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li id="menu-item-1633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1633 dropdown">
+                                                <a title="Articles" href="#" data-toggle="dropdown" class="dropdown-toggle">Articles</a>
+                                                <ul role="menu" class=" dropdown-menu">
+                                                    <li id="menu-item-16999" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16999"><a href="technical_articles.html">Technical Articles</a></li>
+                                                    <li id="menu-item-16998" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16998"><a href="non_technical_articles.html">Non Technical Articles</a></li>
+                                                </ul>
+                                            </li>
+                                            <li id="menu-item-1639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1639 dropdown">
+                                                <a title="Events and Achievements" href="#" data-toggle="dropdown" class="dropdown-toggle">Events and Achievements</a>
+                                                <ul role="menu" class=" dropdown-menu">
+                                                    <li id="menu-item-1697" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1697"><a href="events.html">Events</a></li>
+                                                    <li id="menu-item-1698" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1698"><a href="achievements.html">Achievements</a></li>
+                                                </ul>
+                                            </li>
+                                            <li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1637"><a title="About Us" href="about-us.html">ABOUT</a></li>
+                                    </div>
+                                    <!--end of module group-->
+                                </div>
+                            </div>
+                </nav>
+                <!-- #site-navigation -->
+            </div>
+        </header>
+        <!-- #masthead -->
+        <div id="content" class="main-container">
+            <section class="content-area ">
+                <div id="main" class="" role="main">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="flexible_home_parallax-3" class="flexible_home_parallax">
+                                <section class="cover fullscreen image-bg">
+                                    <div class="parallax-window fullscreen" data-parallax="scroll" data-image-src="img/abstract-stars.png">
+                                        <div class="align-transform">
+                                            <div class="row">
+                                                <div class="top-parallax-section">
+                                                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                                                        <svg viewBox="0 0 800 600">
+                                                            <symbol id="s-text">
+                                                                <text text-anchor="middle" x="50%" y="35%" class="text--line">
+                                                                    Aviation
+                                                                </text>
+                                                                <text text-anchor="middle" x="50%" y="58%" class="text--line2">
+                                                                    2K17
+                                                                </text>
+                                                            </symbol>
+                                                            <g class="g-ants">
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text-copy"></use>
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text-copy"></use>
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text-copy"></use>
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text-copy"></use>
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text-copy"></use>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <!--end of row-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="">
+            </section>
+        </div><div id="flexible_home_parallax-9" class="flexible_home_parallax">
+            <section class="bg-secondary pb0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1 text-center">
+                            <div class="">  <p></button></p> <h3>Terna Staff</h3><p class="mb32">The department of computer engineering was established in the year 1991.The department has earned the reputation of being one of the distinctive department in this campus. The department is striving hard towards the goal of providing innovative and quality education with high standards to achieve academic excellence</p>                          </div>
+                        </div>
+                        <!--end of row-->
+                        <div class="">
+                            <img class="cast-shadow" alt="Terna's Staff" src="img/about us/staff.jpg">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div><div id="flexible_home_testimonial-3" class="flexible_home_testimonial">
+            <section class="parallax-section testimonial-section">
+                <div class="parallax-window" data-parallax="scroll" data-image-src="img/abstract-stars.png" style="height: 500px;">
+                    <div class="clouds"></div>
+                    <div class="container align-transform">
+                        <div class="parallax-text image-bg testimonial">
+                            <div class="row">
+                                <div class="col-sm-12 text-center" style="margin-top:1px;">
+                                    <h4 style="color:white;">From H.O.D. Desk</h4>
+                                </div>
+                            </div>
+                            <!--end of row-->
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="margin-top:1px;">
+                                    <p>It is my pleasure to see Departmental Magazine will allow students to seek advice and guidance from their peers and seniors to nurture an environment of academic excellence among students.</p>
+                                    <p>Every year members of the Magazine Committee come up with new ways of gathering and imparting knowledge. It always has been  a pleasure helping students bring their ideas through the numerous Workshops, Seminars, Industrial Visits, Conferences and Technical Festivals.</p>
+                                    <p>It is my ambition to craft the computerdepartment into  a place for creativity  and learning for generations to come.	I'm imensely proud of the students members in the committe for their collective effort to bring about this magazine.</p>
+                                    <p>
+                                        I offer my heartiest congratulations to the Staff Incharge, Students and Faculty  members for their tireless efforts and wish them success in all their future endeavours<br>
+                                        D. K. Chitre
+                                    </p>
+                                </div>
+                            </div>
+                            <!--end of row-->
+                        </div>
+                    </div>
+                    <!--end of container-->
+                </div>
+            </section>
+        </div><div id="flexible_home_clients-3" class="flexible_home_clients">
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+        </section>
+    </div>
+    </div><!-- row -->
+    </div><!-- #main -->
+    </section><!-- section -->
+    <footer id="colophon" class="site-footer footer bg-dark" role="contentinfo">
+        <div class="container footer-inner">
+            <div class="row">
+            </div>
+            <div class="row">
+                <p>"AVIATION" is the online magazine of computer department of Terna Engineering college. Aviation is a platform which lets the student show their talents. Be it articles, achievements, sketches or even photography. Aviation will also let you know the upcoming events which will be held in the computer department.</p>
+                <!-- .site-info -->
+                <div class="col-sm-6 text-right">
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-sm fade-half back-to-top inner-link" href="#top"><i class="fa fa-angle-up"></i></a>
+    </footer>
+    <!-- #colophon -->
+    </div>
+    <!-- #page -->
+    <div style="display:none">
+    </div>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var WPGroHo = { "my_hash": "" };
+         /* ]]> */
+    </script>
+    <script type='text/javascript' src='js/navigation.js'></script>
+    <script type='text/javascript' src='js/imagesloaded.min.js'></script>
+    <script type='text/javascript' src='js/masonry.min.js'></script>
+    <script type='text/javascript' src='js/jquery/jquery.masonry.min.js'></script>
+    <script type='text/javascript' src='js/flexslider.js'></script>
+    <script type='text/javascript' src='js/smooth-scroll.min.js'></script>
+    <script type='text/javascript' src='js/parallax.min.js'></script>
+    <script type='text/javascript' src='js/flexible-scripts.js'></script>
+</body>
+</html>

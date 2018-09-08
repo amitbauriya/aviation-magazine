@@ -1,0 +1,366 @@
+﻿
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Videos - Terna Aviation Magazine</title>
+    <meta name='robots' content='index,follow' />
+    <meta http-equiv="Cache-control" content="public">
+    <meta http-equiv="expires" content="Mon, 22 Aug 2018 11:12:01 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="theme-color" content="#00339a">
+	<link rel="icon" href="img/favicon.ico">
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+	<link rel='dns-prefetch' href='//s.w.org' />
+	<link rel='stylesheet' id='bootstrap-css'  href='css/bootstrap.min.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='shapely-fonts-css'  href='//fonts.googleapis.com/css?family=Raleway%3A100%2C300%2C400%2C500%2C600%2C700%7COpen+Sans%3A400%2C500%2C600&#038;ver=4.7.1' type='text/css' media='all' />
+	<link rel='stylesheet' href='css/articles.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='css/social.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+	<script type='text/javascript' src='js/jquery/jquery.js'></script>
+	<script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
+	<link rel='https://api.w.org/' href='wp-json/' />
+	<body class="post-template post-template-page-templates post-template-no-sidebar post-template-page-templatesno-sidebar-php single single-post postid-17 single-format-standard has-sidebar-right wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
+	<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<script type='text/javascript'>
+	var video_player = document.getElementById("video_player");
+video = video_player.getElementsByTagName("video")[0],
+video_links = video_player.getElementsByTagName("figcaption")[0],
+source = video.getElementsByTagName("source"),
+link_list = [],
+vidDir = "http://thenewcode.com/assets/videos/",
+currentVid = 0,
+allLnks = video_links.children,
+lnkNum = allLnks.length;
+video.removeAttribute("controls");
+video.removeAttribute("poster");
+
+video.addEventListener('click', () => { video.play(); })
+
+(function() {
+function playVid(index) {
+ video_links.children[index].classList.add("currentvid");
+    source[1].src = vidDir + link_list[index] + ".webm";
+	source[0].src = vidDir + link_list[index] + ".mp4";
+    currentVid = index;
+    video.load();
+	video.play();
+}
+
+for (var i=0; i<lnkNum; i++) {
+var filename = allLnks[i].href;
+link_list[i] = filename.match(/([^\/]+)(?=\.\w+$)/)[0];
+(function(index){
+        allLnks[i].onclick = function(i){
+        i.preventDefault();
+		for (var i=0; i<lnkNum; i++) {
+		allLnks[i].classList.remove("currentvid");
+		}
+		playVid(index);
+        }
+    })(i);
+}
+video.addEventListener('ended', function () {
+    allLnks[currentVid].classList.remove("currentvid");
+    if ((currentVid + 1) >= lnkNum) { nextVid = 0 } else { nextVid = currentVid+1 }
+    playVid(nextVid);
+})
+
+video.addEventListener('mouseenter', function() {
+    video.setAttribute("controls","true");
+})
+
+video.addEventListener('mouseleave', function() {
+    video.removeAttribute("controls");
+})
+
+var indexOf = function(needle) {
+    if(typeof Array.prototype.indexOf === 'function') {
+        indexOf = Array.prototype.indexOf;
+    } else {
+        indexOf = function(needle) {
+            var i = -1, index = -1;
+			for(i = 0; i < this.length; i++) {
+                if(this[i] === needle) {
+                    index = i;
+                    break;
+                }}
+            return index;
+        };}
+    return indexOf.call(this, needle);
+};
+ 	var focusedLink = document.activeElement;
+ 	index = indexOf.call(allLnks, focusedLink);
+
+document.addEventListener('keydown', function(e) {
+if (index) {
+	var focusedElement = document.activeElement;
+    if (e.keyCode == 40 || e.keyCode == 39) { // down or right cursor
+    var nextNode = focusedElement.nextElementSibling;
+    if (nextNode) { nextNode.focus(); } else { video_links.firstElementChild.focus(); }
+    }
+   if (e.keyCode == 38 || e.keyCode == 37) { // up or left cursor
+    var previousNode = focusedElement.previousElementSibling;
+    if (previousNode) { previousNode.focus(); } else { video_links.lastElementChild.focus(); }
+    }
+ }
+});
+
+})();
+	</script>
+<style>
+#video_player {
+  display: table; line-height: 0;
+  font-size: 0; background: #000;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#video_container {
+  position: relative;
+}
+#video_player div, #video_player figcaption {
+  display: table-cell;
+  vertical-align: top;
+}
+#video_container video {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+#video_player figcaption { width: 35%; }
+#video_player figcaption a { display: block; }
+#video_player figcaption a {
+  opacity: .5;
+  transition: 1s opacity;
+}
+#video_player figcaption a img, figure video {
+  width: 100%; height: auto;
+}
+#video_player figcaption a.currentvid, #video_player figcaption a:hover, #video_player figcaption a:focus { opacity: 1; }
+@media (max-width: 700px) {
+  #video_player video, #video_player figcaption {
+    display: table-row;
+  }
+#video_container { padding-top: 56.25%; }
+#video_player figcaption a {
+  display: inline-block; width: 33.33%;
+}
+}
+</style>
+		<header id="masthead" class="site-header" role="banner">
+        <div class="nav-container">
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <div class="container nav-bar">
+                    <div class="row">
+                        <div class="module left">
+                            <a href="http://www.terna.org/aviation2017/"><img src="img/terna-logo.png" style="margin-bottom:3px;" width="192" height="92" alt="Terna Engineering College Nerul"><img src="img/loavi.png" width="70px" height="70px" alt="Terna Aviation"></a>
+                        </div>
+                        <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <div class="module-group right">
+                            <div class="module left">
+                                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                                    <ul id="menu" style="margin-top:25px;" class="menu">
+                                        <li id="menu-item-1636" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1636 active"><a title="Home" href="http://www.terna.org/aviation2017/">Home</a></li>
+                                        <li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1637 dropdown">
+                                            <a title="Gallery" href="gallery.html">Gallery</a>
+                                            <ul role="menu" class=" dropdown-menu">
+                                                <li id="menu-item-16991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16991"><a href="photography.html">Photography</a></li>
+                                                <li id="menu-item-16992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16992"><a href="sketches.html">Sketches</a></li>
+                                                <li id="menu-item-16993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16993"><a href="videos.html">Songs-Videos</a></li>
+                                                <li id="menu-item-16994" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16994 dropdown">
+                                                    <a href="#">Literature</a>
+                                                    <ul role="menu" class=" dropdown-menu">
+                                                        <li id="menu-item-1645" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1645"><a href="non_technical_articles.html">Non Technical</a></li>
+                                                        <li id="menu-item-1699" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1699"><a href="technical_articles.html">Technical</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-1633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1633 dropdown">
+                                            <a title="Articles" href="#" data-toggle="dropdown" class="dropdown-toggle">Articles</a>
+                                            <ul role="menu" class=" dropdown-menu">
+                                                <li id="menu-item-16999" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16999"><a href="technical_articles.html">Technical Articles</a></li>
+                                                <li id="menu-item-16998" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16998"><a href="non_technical_articles.html">Non Technical Articles</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-1639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1639 dropdown">
+                                            <a title="Events and Achievements" href="#" data-toggle="dropdown" class="dropdown-toggle">Events and Achievements</a>
+                                            <ul role="menu" class=" dropdown-menu">
+                                                <li id="menu-item-1697" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1697"><a href="events.html">Events</a></li>
+                                                <li id="menu-item-1698" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1698"><a href="achievements.html">Achievements</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1637"><a title="About Us" href="about-us.html">ABOUT</a></li>
+                                </div>
+                                <!--end of module group-->
+                            </div>
+                        </div>
+            </nav><!-- #site-navigation -->
+        </div>
+    </header><!-- #masthead -->
+	<style>
+	.bg-secondary {
+	    background: transparent url(css/statics/video.jpg) no-repeat fixed center;
+	}
+	#code {
+		font-size: 25px;
+	}
+	code1 {
+		padding: 40px;
+		font-size: 45px;
+		font-family: 'Gloria Hallelujah', cursive;
+		text-align: center;
+		text-transform: uppercase;
+		text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+		color: red;
+	}
+	code1 p { margin:0; }
+	#error:hover { text-shadow: 0 0 200px #ffffff,0 0 80px #008000,0 0 6px #0000ff; }
+	#code:hover { text-shadow: 0 0 100px red,0 0 40px FireBrick,0 0 8px DarkRed; }
+	#error {
+		line-height: 1.6;
+		color: #fff;
+		text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff;
+	}
+	#error span {
+		animation: upper 11s linear infinite;
+	}
+	#code span:nth-of-type(2) {
+		animation: lower 10s linear infinite;
+	}
+	#code span:nth-of-type(1) {
+		text-shadow: none;
+		opacity:.4;
+	}
+	@keyframes upper {
+		0%,19.999%,22%,62.999%,64%, 64.999%,70%,100% {
+			opacity:.99; text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff;
+		}
+		20%,21.999%,63%,63.999%,65%,69.999% {
+			opacity:0.4; text-shadow: none;
+		}
+	}
+	@keyframes lower {
+		0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
+			opacity:0.99; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+		}
+		19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% {
+			opacity:0.4; text-shadow: none;
+		}
+	}
+	</style>
+	<div id="content" class="main-container">
+					<div class="header-callout">
+					<section class="page-title-section bg-secondary " >
+						<div class="container">
+							<code1>
+								<p id="error">V<span>id</span>eo</p>
+								<p id="code">~Featuring<span>Vide</span><span>os</span></p>
+							</code1>
+						</div>
+						<!--end of row-->
+					</div>
+		<!--end of container-->
+		</section>			</div>
+
+		<section class="content-area ">
+			<div id="main" class="container"
+			     role="main">	<div class="row">
+				<div id="primary" class="col-md-8 mb-xs-24 no-sidebar"><article id="post-22" class="post-content post-grid-wide">
+	<header class="entry-header nolist">
+			</header><!-- .entry-header -->
+	<div class="entry-content">
+		<h2 class="post-title">Videos</h2>
+		<div class="entry-meta">
+		<ul class="post-meta">
+		<li><span class="posted-on"><time class="entry-date published updated" datetime="2017-04-25T14:47:10+00:00">April 16, 2017</time></span></li>
+		<li><span>by Sanket</span>
+		</li>
+		</ul><!-- post-meta -->
+		</div>
+		<aside id="sticky-social">
+				<ul>
+						<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.terna.org%2Faviation2017%2Fvideos.html" class="entypo-facebook" target="_blank"><span>Facebook</span></a></li>
+						<li><a href="https://twitter.com/intent/tweet/?text=Check%20out%20this%20website!&url=http%3A%2F%2Fterna.org%2Faviation2017%2Fvideos.html&via=jonsuh" class="entypo-twitter" target="_blank"><span>Twitter</span></a></li>
+						<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fterna.org%2Faviation2017%2Fvideos.html" class="entypo-gplus" target="_blank"><span>Google+</span></a></li>
+						<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fterna.org%2Faviation2017%2Fvideos.html&title=Aviation%20Terna%20Engg%20College&source=http%3A%2F%2Fterna.org%2Faviation2017%2Fvideos.html&summary=Short%20summary" class="entypo-linkedin" target="_blank"><span>LinkedIn</span></a></li>
+						<li><a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fterna.org%2Faviation2017%2Fvideos.html&title=Aviation%20Terna%20Engg%20College" class="entypo-stumbleupon" target="_blank"><span>StumbleUpon</span></a></li>
+						<li><a href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fterna.org%2Faviation2017%2Fvideos.html&media=http%3A%2F%2Fterna.org%2FAviation%2Fimg%2Ffavicon.ico&description=Short%20description&hashtags=Terna,College" class="entypo-pinterest" target="_blank"><span>Pinterest</span></a></li>
+						<li><a href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fterna.org%2Faviation2017%2Fvideos.html&t=Aviation%20Terna%20Engg%20College" class="entypo-tumblr" target="_blank"><span>Tumblr</span></a></li>
+				</ul>
+		</aside>
+		<div class="shapely-content dropcaps-content">
+			<figure id="video_player">
+  <div id="video_container">
+  <video controls poster="img/vibes.jpg" playsinline>
+    <source src="img/vibes.mp4" type="video/mp4">
+</video>
+</div>
+<figcaption>
+  <a href="img/letyourselfgo.mp4" class="currentvid">
+    <img src="img/letyourselfgo.jpg" alt="Let Yourself Go">
+  </a>
+  <a href="img/havoc.mp4">
+    <img src="img/havoc.jpg" alt="Havoc">
+  </a>
+</figcaption>
+</figure>
+						</div>
+			</div><!-- .entry-content -->
+		<!--end of author-bio-->
+		</div><!-- #primary -->
+	</div>
+
+</div><!-- #main -->
+</section><!-- section -->
+
+<div class="footer-callout">
+	</div>
+
+<footer id="colophon" class="site-footer footer bg-dark" role="contentinfo">
+	<div class="container footer-inner">
+		<div class="row">
+
+		</div>
+
+		<div class="row">
+			<div class="site-info col-sm-6">
+				<div class="copyright-text">
+									</div>
+				<div class="footer-credits">
+					Theme Designed by Computer Department Students				</div>
+			</div><!-- .site-info -->
+			<div class="col-sm-6 text-right">
+							</div>
+		</div>
+	</div>
+
+	<a class="btn btn-sm fade-half back-to-top inner-link" href="#top"><i class="fa fa-angle-up"></i></a>
+</footer><!-- #colophon -->
+</div>
+</div><!-- #page -->
+<script type='text/javascript' src='js/navigation.js'></script>
+<script type='text/javascript' src='js/imagesloaded.min.js'></script>
+<script type='text/javascript' src='js/masonry.min.js'></script>
+<script type='text/javascript' src='js/jquery/jquery.masonry.min.js'></script>
+<script type='text/javascript' src='js/flexslider.js'></script>
+<script type='text/javascript' src='js/smooth-scroll.min.js'></script>
+<script type='text/javascript' src='js/parallax.min.js'></script>
+<script type='text/javascript' src='js/flexible-scripts.js'></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function ($) {
+				if ( $(window).width() >= 767 ) {
+					$('.navbar-nav > li.menu-item > a').click(function () {
+						window.location = $(this).attr('href');
+					});
+				}
+			});
+		</script>
+</body>
+</html>
